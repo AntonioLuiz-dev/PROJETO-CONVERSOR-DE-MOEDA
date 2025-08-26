@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>DevClub - Conversor Premium</title>
+</head>
+<body>
+    <main>
+        <h1>Conversor de Moedas Premium</h1>
+
+        <label>
+            Converter <b>de</b>
+            <select class="currency-select-from">
+                <option value="brl">R$ Real Brasileiro</option>
+                <option value="usd">US$ Dólar Americano</option>
+                <option value="eur">€ Euro</option>
+                <option value="gbp">£ Libra</option>
+            </select>
+        </label>
+
+        <label>
+            Converter <b>para</b>
+            <select class="currency-select-to">
+                <option value="usd">US$ Dólar Americano</option>
+                <option value="eur">€ Euro</option>
+                <option value="gbp">£ Libra</option>
+                <option value="brl">R$ Real Brasileiro</option>
+            </select>
+        </label>
+
+        <label>
+            Valor
+            <input class="input-currency" type="text" placeholder="Digite o valor">
+        </label>
+
+        <button class="convert-button">Converter</button>
+
+        <section>
+            <div class="currency-box from-brl">
+                <img class="currency-img-from" src="./assets/real.png" alt="logo-moeda-a-converter">
+                <p class="currency" id="currency-name-from">Real</p>
+                <p class="currency-value-to-convert">R$ 0,00</p>
+            </div>
+
+            <img class="arrow-img" src="./assets/arrow.png" alt="seta">
+
+            <div class="currency-box to-usd">
+                <img class="currency-img-to" src="./assets/dolar.png" alt="logo-moeda-convertida">
+                <p class="currency" id="currency-name-to">Dólar Americano</p>
+                <p class="currency-value">US$ 0,00</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Som de clique -->
+    <audio id="click-sound" src="./assets/click.mp3"></audio>
+
+    <script src="./scripts.js"></script>
+</body>
+</html>

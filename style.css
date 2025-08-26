@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: #333;
+}
+
+main {
+    width: 400px;
+    max-width: 95%;
+    background: #fff;
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+    text-align: center;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 25px;
+    color: #764ba2;
+}
+
+label {
+    display: block;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+select, input {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    border-radius: 12px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    transition: all 0.3s;
+}
+
+select:focus, input:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 8px rgba(102,126,234,0.5);
+}
+
+.convert-button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    background: #667eea;
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.convert-button:hover { background: #764ba2; }
+.convert-button:active { transform: scale(0.97); }
+
+/* Seção de moedas */
+section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 25px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.currency-box {
+    flex: 1 1 45%;
+    border-radius: 20px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    transition: all 0.3s;
+    position: relative;
+}
+
+.currency-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.25);
+}
+
+/* Gradientes por moeda */
+.from-brl, .to-brl { background: linear-gradient(135deg, #ff9a9e, #fad0c4); }
+.from-usd, .to-usd { background: linear-gradient(135deg, #a1c4fd, #c2e9fb); }
+.from-eur, .to-eur { background: linear-gradient(135deg, #fbc2eb, #a6c1ee); }
+.from-gbp, .to-gbp { background: linear-gradient(135deg, #fccb90, #d57eeb); }
+
+.currency-box img { width: 70px; height: 70px; margin-bottom: 8px; transition: transform 0.3s; }
+.currency-box img:hover { transform: scale(1.15); }
+
+.currency { font-weight: 500; margin-bottom: 5px; font-size: 14px; color: #fff; }
+.currency-value, .currency-value-to-convert { font-size: 20px; font-weight: bold; display: inline-block; transition: all 0.3s; }
+
+.currency-update { animation: pulseValue 0.4s ease-out; }
+
+@keyframes pulseValue {
+    0% { transform: scale(1); color: #fff; }
+    50% { transform: scale(1.2); color: #ffd700; }
+    100% { transform: scale(1); color: #fff; }
+}
+
+/* Ícones pulando */
+@keyframes jump {
+    0% { transform: translateY(0); }
+    25% { transform: translateY(-10px); }
+    50% { transform: translateY(0); }
+    75% { transform: translateY(-5px); }
+    100% { transform: translateY(0); }
+}
+
+.icon-jump { animation: jump 0.5s ease-out; }
+
+.arrow-img { width: 40px; cursor: pointer; margin-top: 15px; transition: transform 0.3s; }
+.arrow-img:hover { transform: rotate(180deg); }
+
+@media screen and (max-width: 480px) {
+    section { flex-direction: column; gap: 20px; }
+    .currency-box { width: 100%; }
+}
